@@ -57,20 +57,18 @@ def geeks_url(update: Update, context: CallbackContext):
 
 
 def unknown(update: Update, context: CallbackContext):
-	update.message.reply_text(
-		"Sorry '%s' is not a valid command" % update.message.text)
-
+    update.message.reply_text("Maaf, perintah tidak dikenali. Silakan gunakan perintah yang valid." % update.message.text)
 
 def unknown_text(update: Update, context: CallbackContext):
 	update.message.reply_text(
-		"Sorry I can't recognize you , you said '%s'" % update.message.text)
+		"Maaf, perintah tidak dikenali, '%s'" % update.message.text)
 
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('youtube', youtube_url))
 updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.dispatcher.add_handler(CommandHandler('linkedin', linkedIn_url))
-updater.dispatcher.add_handler(CommandHandler('persyaratan_ppdb', peryaratan_ppdb))
+updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'^persyaratan_ppdb$'), peryaratan_ppdb))
 updater.dispatcher.add_handler(CommandHandler('geeks', geeks_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(
