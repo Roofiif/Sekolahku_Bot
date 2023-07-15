@@ -11,8 +11,8 @@ updater = Updater("6208908073:AAEuFcs9HUyJkeGFqWZtmZKKDHww7HI7bF0",
 
 def start(update: Update, context: CallbackContext):
 	update.message.reply_text(
-		"Hello sir, Welcome to the Bot.Please write\
-		/help to see the commands available.")
+		"Hallo Selamat Datang di Pusat Bantuan PPDB silahkan ketik\
+		/help untuk melihat kata kunci yang dapat digunakan.")
 
 def help(update: Update, context: CallbackContext):
 	update.message.reply_text("""Available Commands :-
