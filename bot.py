@@ -12,9 +12,9 @@ updater = Updater("6208908073:AAEuFcs9HUyJkeGFqWZtmZKKDHww7HI7bF0",
 def start(update: Update, context: CallbackContext):
 	update.message.reply_text(
 		"Hallo Selamat Datang di Pusat Bantuan PPDB silahkan ketik\
-		/help untuk melihat kata kunci yang dapat digunakan.")
+		'bantuan' untuk melihat kata kunci yang dapat digunakan.")
 
-def help(update: Update, context: CallbackContext):
+def bantuan(update: Update, context: CallbackContext):
 	update.message.reply_text("""Available Commands :-
 	/Seputar_ppdb - To get the youtube URL
 	/Jalur_zonasi - To get the LinkedIn profile URL
@@ -66,7 +66,7 @@ def unknown_text(update: Update, context: CallbackContext):
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('youtube', youtube_url))
-updater.dispatcher.add_handler(CommandHandler('help', help))
+updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'^bantuan$'), bantuan))
 updater.dispatcher.add_handler(CommandHandler('linkedin', linkedIn_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'^persyaratan_ppdb$'), peryaratan_ppdb))
 updater.dispatcher.add_handler(CommandHandler('geeks', geeks_url))
