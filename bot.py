@@ -19,8 +19,11 @@ def bantuan(update: Update, context: CallbackContext):
 	Kata Kunci Tersedia :
 	<b>Seputar_ppdb</b> - Berisi informasi umum mengenai PPDB
 	<b>Persyaratan_ppdb</b> - Berisi persyaratan PPDB
-	/Jalur Afirmasi - To get gmail URL
-	/geeks - To get the GeeksforGeeks URL""", parse_mode=ParseMode.HTML)
+	""", parse_mode=ParseMode.HTML)
+
+
+def seputar_ppdb(update: Update, context: CallbackContext):
+	update.message.reply_text("Diisi informasi ppdb")
 
 
 def peryaratan_ppdb(update: Update, context: CallbackContext):
@@ -37,11 +40,6 @@ def peryaratan_ppdb(update: Update, context: CallbackContext):
     - Surat keputusan satgas covid bagi afirmasi kondisi tertentu penanganan Covid-19
     - Piagam dan Dokumentasi Prestasi (untuk jalur prestasi kejuaraan) maks. 5 tahun, min. 6 bulan
 	""", parse_mode=ParseMode.HTML)
-
-
-def youtube_url(update: Update, context: CallbackContext):
-	update.message.reply_text("Youtube Link =>\
-	https://www.youtube.com/")
 
 
 def linkedIn_url(update: Update, context: CallbackContext):
