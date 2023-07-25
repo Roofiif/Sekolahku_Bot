@@ -17,28 +17,26 @@ def start(update: Update, context: CallbackContext):
 def bantuan(update: Update, context: CallbackContext):
 	update.message.reply_text("""
 	Kata Kunci Tersedia :
-	<b>Seputar_ppdb</b> - To get the youtube URL
-	/Jalur_zonasi - To get the LinkedIn profile URL
+	<b>Seputar_ppdb</b> - Berisi informasi umum mengenai PPDB
+	<b>Persyaratan_ppdb</b> - Berisi persyaratan PPDB
 	/Jalur Afirmasi - To get gmail URL
 	/geeks - To get the GeeksforGeeks URL""", parse_mode=ParseMode.HTML)
 
 
 def peryaratan_ppdb(update: Update, context: CallbackContext):
 	update.message.reply_text("""
-    UMUM
+    <b>UMUM</b>
     - Ijazah/Surat Keterangan Lulus/Kartu peserta Ujian Sekolah
     - Akta Kelahiran/Surat Keterangan Lahir
     - Kartu Keluarga (minimal satu tahun), KTP
     - Buku Rapor (semester 1 s.d. 5)
-    - Surat Tanggung Jawab Mutlak Orang Tua
-
-    KHUSUS
+    - Surat Tanggung Jawab Mutlak Orang Tua\n\n<b>KHUSUS</b>
     - Kartu Program Penanganan Kemiskinan/Terdaftar pada DTKS Dinsos (bagi jalur - afirmasi/KETM)
     - Surat Keterangan Domisili dari RT/RW (bagi afirmasi korban bencana alam/sosial)
     - Surat Tugas Orangtua (bagi jalur perpindahan tugas orangtua/wali, maks. 3 tahun/anak guru)
     - Surat keputusan satgas covid bagi afirmasi kondisi tertentu penanganan Covid-19
     - Piagam dan Dokumentasi Prestasi (untuk jalur prestasi kejuaraan) maks. 5 tahun, min. 6 bulan
-	""")
+	""", parse_mode=ParseMode.HTML)
 
 
 def youtube_url(update: Update, context: CallbackContext):
