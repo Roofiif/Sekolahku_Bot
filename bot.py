@@ -45,9 +45,9 @@ def jalur_ppdb(update: Update, context: CallbackContext):
 def daftar_ulang(update: Update, context: CallbackContext):
 	update.message.reply_text("""
 	1. Kapan pengumuman hasil seleksi PPDB?
-		Pengumuman hasil seleksi PPDB dilaksanakan pada tanggal 24 Juni 2024.
+		Pengumuman hasil seleksi PPDB dilaksanakan pada tanggal 24 Juni 2024.\n
 	2. Dimana saya dapat melihat hasil PPDB?
-		Pengumuman hasil seleksi PPDB dilaksanakan di sekolah masing-masing dan pada website resmi PPDB.
+		Pengumuman hasil seleksi PPDB dilaksanakan di sekolah masing-masing dan pada website resmi PPDB.\n
 	3. Kapan dan dimana saya harus melakukan daftar ulang?
 		Daftar ulang dilaksanakan di sekolah tempat calon peserta didik baru diterima pada tangga 24, 25, 26, dan 27 Juni 2024.
 	""", parse_mode=ParseMode.HTML)
@@ -55,7 +55,7 @@ def daftar_ulang(update: Update, context: CallbackContext):
 def nilai_prestasi(update: Update, context: CallbackContext):
 	update.message.reply_text("""
 	1. Bagaimana cara mendapatkan tambahan nilai prestasi non akademik?
-	Calon peserta didik melampirkan dokumen prestasi kejuaraan/lomba kemudian diunggah ke sistem PPDB.
+	Calon peserta didik melampirkan dokumen prestasi kejuaraan/lomba kemudian diunggah ke sistem PPDB.\n
 	2. Apakah nilai tambahan prestasi dapat digunakan diluar jalur prestasi?
 	Ya, nilai tambahan prestasi dapat digunakan dalam semua jalur pendaftaran.
 	""", parse_mode=ParseMode.HTML)
@@ -81,7 +81,7 @@ def jalur_prestasi(update: Update, context: CallbackContext):
 def jalur_pto(update: Update, context: CallbackContext):
 	update.message.reply_text("""
 	Jalur PTO diperuntukkan bagi calon peserta didik yang berdomisili di luar Zonasi Sekolah yang bersangkutan, dimana meliputi:
-	1. Perpindahan tugas Orang Tua/Wali dari luar DIY ke dalam DIY, dibuktikan dengan Kartu Keluarga luar DIY.
+	1. Perpindahan tugas Orang Tua/Wali dari luar DIY ke dalam DIY, dibuktikan dengan Kartu Keluarga luar DIY.\n
 	2. Perpindahan tugas Orang Tua/Wali antar Kabupaten/Kota dalam DIY yang diikuti perpindahan domisili Orang Tua/Wali, yang dibuktikan dengan perpindhan Kartu Keluarga, Surat perpindahan tugas.
 	Jalur PTO memiliki daya tampung sebesar 5% (lima persen) dari daya tampung sekolah.
 	""", parse_mode=ParseMode.HTML)
