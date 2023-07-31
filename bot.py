@@ -52,18 +52,28 @@ def nilai_prestasi(update: Update, context: CallbackContext):
 
 def jalur_zonasi(update: Update, context: CallbackContext):
 	update.message.reply_text("""
+	Jalur zonasi adalah salah satu jalur dalam PPDB SMA dan SMK Negeri yang salah satu komponen seleksinya didasarkan pada domisili atau zona calon peserta didik baru. Kuota jalur zonasi sebesar 55% (lima puluh lima) dari daya tampung sekolah yang terbagi menjadi 5% (lima persen) zonasi radius dan 50% (lima puluh persen) zonasi reguler.
 	""", parse_mode=ParseMode.HTML)
 
 def jalur_afirmasi(update: Update, context: CallbackContext):
 	update.message.reply_text("""
+	Jalur afirmasi adalah jalur PPDB yang diperuntukkan bagi:
+	a. Calon peserta didik dari keluarga ekonomi tidak mampu.
+	b. Calon peserta didik penyandang disabilitas pada sekolah yang menyelenggarakan pendidikan inklusif.
+	Jalur afirmasi memiliki kuota sebesar 20% (dua puluh persen) dari daya tampung sekolah.
 	""", parse_mode=ParseMode.HTML)
 
 def jalur_prestasi(update: Update, context: CallbackContext):
 	update.message.reply_text("""
+	Jalur prestasi merupakan jalur khusus untuk peserta didik dengan nilai gabungan minimal sebesar 330 (tiga ratus tiga puluh). Kuota jalur prestasi sebesar 20% (dua puluh persen) dari daya tampung sekolah.
 	""", parse_mode=ParseMode.HTML)
 
 def jalur_pto(update: Update, context: CallbackContext):
 	update.message.reply_text("""
+	Jalur PTO diperuntukkan bagi calon peserta didik yang berdomisili di luar Zonasi Sekolah yang bersangkutan, dimana meliputi:
+	1. Perpindahan tugas Orang Tua/Wali dari luar DIY ke dalam DIY, dibuktikan dengan Kartu Keluarga luar DIY.
+	2. Perpindahan tugas Orang Tua/Wali antar Kabupaten/Kota dalam DIY yang diikuti perpindahan domisili Orang Tua/Wali, yang dibuktikan dengan perpindhan Kartu Keluarga, Surat perpindahan tugas.
+	Jalur PTO memiliki daya tampung sebesar 5% (lima persen) dari daya tampung sekolah.
 	""", parse_mode=ParseMode.HTML)
 
 def peryaratan_ppdb(update: Update, context: CallbackContext):
