@@ -23,8 +23,48 @@ def bantuan(update: Update, context: CallbackContext):
 
 
 def seputar_ppdb(update: Update, context: CallbackContext):
-	update.message.reply_text("Diisi informasi ppdb")
+	update.message.reply_text("""
+	Seputar PPDB
+	Kata Kunci Tersedia :
+	<b>Jalur_ppdb</b> - Berisi informasi jalur yang tersedia
+	<b>Nilai_prestasi</b> - Berisi informasi Nilai tambahan
+	<b>Daftar_ulang</b> - Berisi informasi Daftar ulang
+	""", parse_mode=ParseMode.HTML)
 
+
+def jalur_ppdb(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	Jalur PPDB
+	Kata Kunci Tersedia :
+	<b>Jalur_zonasi</b> - Berisi informasi jalur Zonasi
+	<b>Jalur_afirmasi</b> - Berisi informasi jalur aformasi
+	<b>Jalur_prestasi</b> - Berisi informasi jalur Prestasi
+	<b>Jalur_pto</b> - Berisi informasi jalur pto
+	""", parse_mode=ParseMode.HTML)
+
+def daftar_ulang(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
+
+def nilai_prestasi(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
+
+def jalur_zonasi(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
+
+def jalur_afirmasi(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
+
+def jalur_prestasi(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
+
+def jalur_pto(update: Update, context: CallbackContext):
+	update.message.reply_text("""
+	""", parse_mode=ParseMode.HTML)
 
 def peryaratan_ppdb(update: Update, context: CallbackContext):
 	update.message.reply_text("""
@@ -41,18 +81,6 @@ def peryaratan_ppdb(update: Update, context: CallbackContext):
     - Piagam dan Dokumentasi Prestasi (untuk jalur prestasi kejuaraan) maks. 5 tahun, min. 6 bulan
 	""", parse_mode=ParseMode.HTML)
 
-
-def linkedIn_url(update: Update, context: CallbackContext):
-	update.message.reply_text(
-		"LinkedIn URL => \
-		https://www.linkedin.com/in/dwaipayan-bandyopadhyay-007a/")
-
-
-def geeks_url(update: Update, context: CallbackContext):
-	update.message.reply_text(
-		"GeeksforGeeks URL => https://www.geeksforgeeks.org/")
-
-
 def unknown(update: Update, context: CallbackContext):
     update.message.reply_text("Maaf, perintah tidak dikenali. Silakan gunakan perintah yang valid." % update.message.text)
 
@@ -62,11 +90,8 @@ def unknown_text(update: Update, context: CallbackContext):
 
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
-updater.dispatcher.add_handler(CommandHandler('youtube', youtube_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^bantuan$'), bantuan))
-updater.dispatcher.add_handler(CommandHandler('linkedin', linkedIn_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^persyaratan_ppdb$'), peryaratan_ppdb))
-updater.dispatcher.add_handler(CommandHandler('geeks', geeks_url))
 updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
 updater.dispatcher.add_handler(MessageHandler(
 	Filters.command, unknown)) # Filters out unknown commands
