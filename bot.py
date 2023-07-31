@@ -82,11 +82,11 @@ def peryaratan_ppdb(update: Update, context: CallbackContext):
 	""", parse_mode=ParseMode.HTML)
 
 def unknown(update: Update, context: CallbackContext):
-    update.message.reply_text("Maaf, perintah tidak dikenali. Silakan gunakan perintah yang valid." % update.message.text)
+    update.message.reply_text("Maaf, perintah tidak dikenali. Silakan gunakan perintah yang valid.")
 
+# Fungsi untuk menangani pesan teks yang tidak dikenali
 def unknown_text(update: Update, context: CallbackContext):
-	update.message.reply_text(
-		"Maaf, perintah tidak dikenali, '%s'" % update.message.text)
+    update.message.reply_text("Maaf, perintah tidak dikenali: '{}'".format(update.message.text))
 
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
@@ -100,9 +100,8 @@ updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^jalur afirmas
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^jalur prestasi$'), jalur_prestasi))
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^jalur pto$'), jalur_pto))
 updater.dispatcher.add_handler(MessageHandler(Filters.regex(r'(?i)^persyaratan ppdb$'), peryaratan_ppdb))
-updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown))
-updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown)) # Filters out unknown commands
+updater.dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, unknown_text))
 # Filters out unknown messages.
-updater.dispatcher.add_handler(MessageHandler(Filters.text, unknown_text))
+updater.dispatcher.add_handler(MessageHandler(Filters.command, unknown))
 
 updater.start_polling()
